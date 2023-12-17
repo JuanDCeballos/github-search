@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { PiMagnifyingGlass } from 'react-icons/pi';
 
-const Search = ({ setUserInfo }) => {
+const Search = ({ setUserInfo, mode }) => {
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState(false);
 
@@ -25,12 +26,17 @@ const Search = ({ setUserInfo }) => {
   }, [search]);
 
   return (
-    <>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+    <div className={`search search-${mode ? `Dark` : `Ligth`}`}>
+      <PiMagnifyingGlass />
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder='Search GitHub username...'
+      />
       <button onClick={() => setSearch((prevState) => !prevState)}>
         Search
       </button>
-    </>
+    </div>
   );
 };
 
