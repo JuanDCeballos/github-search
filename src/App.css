@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 /* #0079FE BUTTON COLOR */
 
 /* DARK COLOR */
@@ -12,4 +14,44 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f8ff;
+}
+
+.container {
+  background-color: #fefefe;
+  min-width: 300px;
+  max-width: 1000px;
+}
+
+/* Search component styles */
+
+.search {
+  display: flex;
+}
+
+.search-Ligth {
+  background-color: #fefefe;
+}
+
+.search-Dark {
+  background-color: #1f2a48;
+}
+
+/* UserInfo component styles */
+
+.desc-container img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
 }
