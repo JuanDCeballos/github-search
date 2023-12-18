@@ -68,8 +68,6 @@ const UserInfo = () => {
     const monthIndex = date.getMonth();
     const year = date.getFullYear();
 
-    console.log(day);
-
     // Format the date as "DD Mon YYYY"
     const formattedDate = `${day.toString().padStart(2, '0')} ${
       monthNames[monthIndex]
@@ -79,9 +77,9 @@ const UserInfo = () => {
   };
 
   return (
-    <div>
+    <>
       {userInfo ? (
-        <div>
+        <div className='user-info-container'>
           <div className='desc-container'>
             <img src={userInfo.avatar_url} className='profile-picture' />
             <div>
@@ -94,32 +92,46 @@ const UserInfo = () => {
             {userInfo.bio ? (
               <p className='bio'>{userInfo.bio}</p>
             ) : (
-              <p className='bio'>This profile has no bio</p>
+              <p className='bio'>This profile has no bio.</p>
             )}
           </div>
           <div className='stats-container'>
-            <p>Repos {userInfo.public_repos}</p>
-            <p>Followers {userInfo.followers}</p>
-            <p>Following {userInfo.following}</p>
+            <div>
+              <p>Repos</p>
+              <p>{userInfo.public_repos}</p>
+            </div>
+            <div>
+              <p>Followers</p>
+              <p> {userInfo.followers}</p>
+            </div>
+            <div>
+              <p>Following</p>
+              <p> {userInfo.following}</p>
+            </div>
           </div>
           <div className='links-container'>
-            <p>
-              <IoLocationSharp />{' '}
-              {userInfo.location ? userInfo.location : 'Not Available'}
-            </p>
-            <p>
-              <ImLink /> {userInfo.bio ? userInfo.bio : 'Not Available'}
-            </p>
-            <p>
-              <FaXTwitter />{' '}
-              {userInfo.twitter_username
-                ? userInfo.twitter_username
-                : 'Not Available'}
-            </p>
-            <p>
-              <HiBuildingOffice2 />{' '}
-              {userInfo.company ? userInfo.company : 'Not Available'}
-            </p>
+            <div>
+              <p>
+                <IoLocationSharp className='icon' />{' '}
+                {userInfo.location ? userInfo.location : 'Not Available'}
+              </p>
+              <p>
+                <ImLink className='icon' />{' '}
+                {userInfo.bio ? userInfo.bio : 'Not Available'}
+              </p>
+            </div>
+            <div>
+              <p>
+                <FaXTwitter className='icon' />{' '}
+                {userInfo.twitter_username
+                  ? userInfo.twitter_username
+                  : 'Not Available'}
+              </p>
+              <p>
+                <HiBuildingOffice2 className='icon' />{' '}
+                {userInfo.company ? userInfo.company : 'Not Available'}
+              </p>
+            </div>
           </div>
         </div>
       ) : (
@@ -127,7 +139,7 @@ const UserInfo = () => {
           <h1>Data not received</h1>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
