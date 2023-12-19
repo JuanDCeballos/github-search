@@ -82,9 +82,11 @@ const UserInfo = () => {
         <div className='user-info-container'>
           <div className='desc-container'>
             <img src={userInfo.avatar_url} className='profile-picture' />
-            <div>
-              <p>{userInfo.login}</p>
-              <p>{userInfo.name ? userInfo.name : ''}</p>
+            <div className='desc-container-info'>
+              <div className='names'>
+                <p>{userInfo.login}</p>
+                <p>{userInfo.name ? userInfo.name : ''}</p>
+              </div>
               <p>Joined {formatDate(userInfo.created_at.substring(0, 10))}</p>
             </div>
           </div>
@@ -98,15 +100,15 @@ const UserInfo = () => {
           <div className='stats-container'>
             <div>
               <p>Repos</p>
-              <p>{userInfo.public_repos}</p>
+              <p className='stat'>{userInfo.public_repos}</p>
             </div>
             <div>
               <p>Followers</p>
-              <p> {userInfo.followers}</p>
+              <p className='stat'> {userInfo.followers}</p>
             </div>
             <div>
               <p>Following</p>
-              <p> {userInfo.following}</p>
+              <p className='stat'> {userInfo.following}</p>
             </div>
           </div>
           <div className='links-container'>
