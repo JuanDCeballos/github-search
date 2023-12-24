@@ -28,14 +28,18 @@ const Search = ({ setUserInfo, mode }) => {
   return (
     <div className={`search search-${mode ? `Dark` : `Ligth`}`}>
       <div className='search-input'>
-        <PiMagnifyingGlass />
+        <PiMagnifyingGlass className='search-icon' />
         <input
+          className='input'
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder='Search GitHub username...'
         />
       </div>
-      <button onClick={() => setSearch((prevState) => !prevState)}>
+      <button
+        onClick={() => setSearch((prevState) => !prevState)}
+        className='btn'
+      >
         Search
       </button>
     </div>
