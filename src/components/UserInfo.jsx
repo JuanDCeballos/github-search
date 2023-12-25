@@ -3,7 +3,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { HiBuildingOffice2 } from 'react-icons/hi2';
 import { ImLink } from 'react-icons/im';
 
-const UserInfo = ({ userInfo, mode }) => {
+const UserInfo = ({ userInfo, mode, resStatus }) => {
   const formatDate = (dateString) => {
     // Create a Date object from the input string
     const date = new Date(dateString);
@@ -39,7 +39,7 @@ const UserInfo = ({ userInfo, mode }) => {
 
   return (
     <>
-      {userInfo ? (
+      {resStatus == 200 ? (
         <div
           className={`user-info-container user-info-container-${
             mode ? `dark` : `light`
@@ -110,8 +110,12 @@ const UserInfo = ({ userInfo, mode }) => {
           </div>
         </div>
       ) : (
-        <div>
-          <h1>Data not received</h1>
+        <div
+          className={`user-info-container user-info-container-${
+            mode ? `dark` : `light`
+          }`}
+        >
+          <h1 className={`title-${mode ? `dark` : `light`}`}>User not found</h1>
         </div>
       )}
     </>
