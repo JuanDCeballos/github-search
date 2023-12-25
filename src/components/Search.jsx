@@ -6,13 +6,18 @@ const Search = ({ setUserInfo, mode }) => {
   const [search, setSearch] = useState(false);
 
   const API_URL = 'https://api.github.com';
-  const sizas = 'JuanDCeballos';
 
   const fetchResults = async (query) => {
     try {
       const response = await fetch(`${API_URL}/users/${query}`);
       const json = await response.json();
-      setUserInfo(json);
+
+      const returnedObj = {
+        status: response.status,
+        json: json,
+      };
+
+      setUserInfo(returnedObj);
     } catch (e) {
       throw new Error(e);
     }
