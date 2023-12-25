@@ -15,17 +15,23 @@ const App = () => {
   };
 
   return (
-    <div className='app'>
+    <div className={`app app-${colorMode ? `dark` : `light`}`}>
       <main className='container'>
-        <div>
-          <h1 className='title'>Devfinder</h1>
+        <div className='title-container'>
+          <h1 className={`title-${colorMode ? `dark` : `light`}`}>Devfinder</h1>
           {colorMode ? (
-            <button onClick={() => setColorMode((prevColor) => !prevColor)}>
-              Light <MdLightMode />
+            <button
+              onClick={() => setColorMode((prevColor) => !prevColor)}
+              className='mode-dark'
+            >
+              Light <MdLightMode className='mode-icon' />
             </button>
           ) : (
-            <button onClick={() => setColorMode((prevColor) => !prevColor)}>
-              Dark <MdDarkMode />
+            <button
+              onClick={() => setColorMode((prevColor) => !prevColor)}
+              className='mode-light'
+            >
+              Dark <MdDarkMode className='mode-icon' />
             </button>
           )}
         </div>
