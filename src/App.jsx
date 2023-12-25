@@ -10,10 +10,6 @@ const App = () => {
   const [colorMode, setColorMode] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
 
-  const toggleMode = () => {
-    setColorMode((prevMode) => !prevMode);
-  };
-
   return (
     <div className={`app app-${colorMode ? `dark` : `light`}`}>
       <main className='container'>
@@ -36,7 +32,14 @@ const App = () => {
           )}
         </div>
         <Search setUserInfo={setUserInfo} mode={colorMode} />
-        <UserInfo userInfo={userInfo} mode={colorMode} />
+
+        {userInfo && (
+          <UserInfo
+            userInfo={userInfo.json}
+            mode={colorMode}
+            resStatus={userInfo.status}
+          />
+        )}
       </main>
     </div>
   );
