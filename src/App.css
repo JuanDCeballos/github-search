@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-/* #0079FE BUTTON COLOR */
-
-/* DARK COLOR */
-/* 1F2A48 CONTAINER BACKGROUND */
-/* 141C2F OUTER BACKGROUND */
-
-/* LIGTH COLOR */
-/* F5F8FF  OUTER BACKGROUND*/
-/* FEFEFE CONTAINER BACKGROUND */
-
 * {
   margin: 0;
   padding: 0;
@@ -79,6 +69,14 @@ body {
 
 .title-container button .mode-icon {
   margin-left: 10px;
+}
+
+.mode-light {
+  color: #4b6a9a;
+}
+
+.mode-dark {
+  color: #fefefe;
 }
 
 /* Search component styles */
@@ -155,6 +153,10 @@ body {
   color: #0079fe;
 }
 
+.joined {
+  color: #4b6a9a;
+}
+
 .desc-container {
   display: flex;
   justify-content: center;
@@ -171,6 +173,7 @@ body {
 .bio-container {
   text-align: center;
   margin: 30px 0px 20px 0px;
+  color: #4b6a9a;
 }
 
 .stats-container {
@@ -183,10 +186,19 @@ body {
 
 .stats-container-dark {
   background-color: #141c2f;
+  color: #fefefe;
 }
 
 .stats-container-light {
   background-color: #f5f8ff;
+}
+
+.stats-container-light .stat-text {
+  color: #4b6a9a;
+}
+
+.stats-container-light .stat {
+  color: black;
 }
 
 .stats-container div {
@@ -196,6 +208,10 @@ body {
 
 .stats-container div .stat {
   font-weight: bold;
+}
+
+.links-container {
+  color: #4b6a9a;
 }
 
 .links-container div p {
@@ -231,10 +247,4 @@ body {
     display: flex;
     justify-content: space-around;
   }
-
-  /* .desc-container .desc-container-info {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-  } */
 }
